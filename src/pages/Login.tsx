@@ -4,10 +4,10 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleLogin = async() => {
-        window.location.href = 'https://accounts.spotify.com/auhtorize?' +
+        window.location.href = 'https://accounts.spotify.com/authorize?' +
         new URLSearchParams({
             client_id: 'e0d605558ba04a078cc71d072fdc4083',
-            respone_type: 'code',
+            response_type: 'code',
             redirect_uri: 'http://127.0.0.1:3000/callback',
             scope: 'user-top-read user-read-private'
         }).toString();
