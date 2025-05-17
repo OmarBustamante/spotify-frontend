@@ -11,18 +11,23 @@ const Callback = () => {
         const code = params.get('code');
 
         const fetchToken = async () => {
-            const response = await fetch('http://localhost:8080/auth/spotify', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    code,
-                    redirectUri: 'http://127.0.0.1:3000/callback'
-                }),
-            });
+            console.log("ola")
+            try{
+                const response = await fetch('http://127.0.0.1:8080/auth/spotify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        code,
+                        redirectUri: 'http://127.0.0.1:3000/callback'
+                    }),
+                });
 
-            const data = await response.json();
-            setAccessToken(data.accessToken);
-            navigate('/dashboard');
+                const data = await response.json();
+                setAccessToken(data.accessToken);
+                navigate('/dashboard');
+            } catch(error){
+                console.error("Failed to fetch token: ", error);
+            }
         };
 
         if(code){
