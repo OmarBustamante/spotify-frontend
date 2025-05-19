@@ -8,7 +8,7 @@ const Login = () => {
         new URLSearchParams({
             client_id: 'e0d605558ba04a078cc71d072fdc4083',
             response_type: 'code',
-            redirect_uri: 'http://127.0.0.1:3000/callback',
+            redirect_uri: 'http://127.0.0.1:5173/callback',
             scope: 'user-top-read user-read-private'
         }).toString();
     }
