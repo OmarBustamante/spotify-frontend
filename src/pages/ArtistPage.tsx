@@ -7,6 +7,7 @@ interface Artist {
     name : string;
     genres: string[];
     imageUrl: string;
+    followers: string;
 }
 
 const ArtistPage = () => {
@@ -24,6 +25,7 @@ const ArtistPage = () => {
                 })
 
                 const data = await response.json();
+                console.log(data)
                 setArtist(data)
             } catch(error){
                 console.error('Error fetching artist data', error)
@@ -36,15 +38,16 @@ const ArtistPage = () => {
     }, [id, accessToken])
 
     return(
-        <div>
-            <Link to='/dashboard'>Back to Dashboard</Link>
+        <div className='flex flex-col items-center text-white'>
+            <Link to='/dashboard' className='bg-gray-400 w-full p-5 text-2xl mb-5 text-black'>Back to Dashboard</Link>
 
             <div>
                 <img src={artist?.imageUrl} alt={artist?.name} 
                 className='w-64 h-64'/>
-                <div>
-                    <h1>{artist?.name}</h1>
-                    <p>{artist?.genres.join(', ')}</p>
+                <div className='m-2'>
+                    <h1 className='mb-2 text-3xl'>{artist?.name}</h1>
+                    <p className='mb-2 text-2xl'>{artist?.genres.join(', ')}</p>
+                    <p className='mb-2 text-2xl'>Follower: {artist?.followers}</p>
                 </div>
             </div>
         </div>

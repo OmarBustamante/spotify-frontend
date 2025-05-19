@@ -34,7 +34,7 @@ const Callback = () => {
     }, [params, setAccessToken, navigate]);
 
     return(
-        <p className="text-white text-center mt-10">
+        <p className="text-center mt-10">
             Loading...
         </p>
     )

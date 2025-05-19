@@ -1,7 +1,6 @@
-import { useNavigate } from 'react-router-dom'
+
 
 const Login = () => {
-    const navigate = useNavigate();
 
     const handleLogin = async() => {
         window.location.href = 'https://accounts.spotify.com/authorize?' +
@@ -16,7 +15,7 @@ const Login = () => {
     return(
         <div className='h-screen flex items-center justify-center bg-gray-900'>
             <button
-                className='bg-green-500 text-white px-6 py-3 rounded-xl text-xl hover:bg-green-400'
+                className='bg-gray-500 text-white px-6 py-3 rounded-xl text-xl hover:bg-gray-400'
                 onClick={handleLogin}
             >
                 Login with Spotify

@@ -39,21 +39,24 @@ const TopResults = () => {
     }, [accessToken]);
 
     return(
-        <div className='grid grid-cols-5 gap-6 p-10 m-24 bg-amber-400'>
-            {artists.map((artist) => (
-                <Link 
-                    to={`/artists/${artist.id}`}
-                    key={artist.id}
-                    className='flex flex-col items-center bg-gray-800 hover:bg-gray-700'
-                >
-                    <img 
-                        src={artist.imageUrl}
-                        alt={artist.name}
-                        className='w-50 h-50'
-                    />
-                    <h3 className='text-white text-xl'>{artist.name}</h3>
-                </Link>
-            ))}
+        <div className='gap-6 p-10 m-24'>
+            <h1 className='bg-gray-800 p-5 text-4xl text-white'>Top Artist</h1>
+            <div className='grid grid-cols-5 gap-6 bg-gray-400 py-4'>
+                {artists.map((artist) => (
+                    <Link 
+                        to={`/artists/${artist.id}`}
+                        key={artist.id}
+                        className='flex flex-col items-center'
+                    >
+                        <img 
+                            src={artist.imageUrl}
+                            alt={artist.name}
+                            className='w-50 h-50'
+                        />
+                        <h3 className='text-xl'>{artist.name}</h3>
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 }
