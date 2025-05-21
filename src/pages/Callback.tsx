@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useNavigate, useSearchParams} from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
+
 const Callback = () => {
     const [params] = useSearchParams();
     const navigate = useNavigate();
@@ -34,7 +35,7 @@ const Callback = () => {
     }, [params, setAccessToken, navigate]);
 
     return(
-        <p className="text-center mt-10">
+        <p className="text-center text-white mt-20">
             Loading...
         </p>
     )

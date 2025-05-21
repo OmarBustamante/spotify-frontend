@@ -1,4 +1,4 @@
-
+import { GiMusicalNotes, GiMusicalScore } from "react-icons/gi";
 
 const Login = () => {
 
@@ -13,7 +13,11 @@ const Login = () => {
     }
 
     return(
-        <div className='h-screen flex items-center justify-center bg-gray-900'>
+        <div className='h-screen flex flex-col items-center gap-25 justify-center bg-gray-900'>
+            <div className="flex items-center">
+                <GiMusicalScore className="text-white" size={150} />
+                <GiMusicalNotes className="text-white" size={100} />
+            </div>
             <button
                 className='bg-gray-500 text-white px-6 py-3 rounded-xl text-xl hover:bg-gray-400'
                 onClick={handleLogin}

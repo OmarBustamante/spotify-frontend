@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { IoMdArrowRoundBack } from "react-icons/io";
 
 interface Album {
     id: string;
@@ -49,13 +50,15 @@ const AlbumPage = () => {
 
     return(
         <div className='flex flex-col items-center text-white'>
-            <Link to='/dashboard' className='bg-gray-400 w-full p-5 text-2xl mb-5 text-black'>Back to Dashboard</Link>
+            <Link to='/dashboard' className='bg-gray-400 w-full p-5 text-2xl mb-5 text-black flex items-center hover:text-white'>
+                <IoMdArrowRoundBack />Back to DashboardBack to Dashboard
+            </Link>
 
-            <div className='flex'>
+            <div className='flex w-1/3'>
                 <img src={album?.imageUrl} alt={album?.name} 
                 className='w-64 h-64'/>
                 <div className='flex flex-col justify-between py-5 pl-5'>
-                    <h1 className='text-2xl font-bold'>{album?.name}</h1>
+                    <h1 className='text-4xl font-bold'>{album?.name}</h1>
                     <Link to={`/artists/${album?.artistsId[0]}`} className='text-xl'>{album?.artists.join(', ')}</Link>
                     <p className='text-xl'>Release Date: {album?.releaseDate}</p>
                 </div>
